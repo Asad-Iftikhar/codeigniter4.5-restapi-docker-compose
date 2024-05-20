@@ -1,0 +1,81 @@
+version: '1'
+services:
+    app:
+        container_name: app-codeigniter4
+        build:
+            context: "./docker"
+            dockerfile: Dockerfile
+        working_dir: /var/www
+        env_file:
+            - ".env"
+        volumes:
+            - ./web:/var/www
+            - ./docker/php.ini:/usr/local/etc/php/conf.d/local.ini
+        tty: true
+        networks:
+            - app-network
+    nginx:
+        container_name: nginx-codeigniter4
+        build:
+            context: "./docker/nginx"
+#            dockerfile: Dockerfile
+        restart: always
+        env_file:
+            - ".env"
+        working_dir: /var/www/html
+        volumes:
+            - ./web:/var/www
+            - ./docker/nginx/ssl:/etc/nginx/ssl
+            - ./docker/nginx/sites:/etc/nginx/sites-available
+        ports:
+            - "443:443"
+            - "80:80"
+        networks:
+            - app-network
+        tty: true
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin-codeigniter4
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            PMA_HOST: ${MYSQL_HOST}
+        restart: always
+        depends_on:
+            - mysqldb
+        tty: true
+        links:
+            - mysqldb
+        ports:
+            - "9191:80"
+        networks:
+            - app-network
+    mysqldb:
+        container_name: ${MYSQL_HOST}
+        image: mysql:${MYSQL_VERSION}
+        tty: true
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: '${MYSQL_PASSWORD}'
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: '${MYSQL_DATABASE}'
+            MYSQL_USER: '${MYSQL_USER}'
+            MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        volumes:
+            - 'sail-mysql:/var/lib/mysql'
+        networks:
+            - app-network
+        healthcheck:
+            test: [ "CMD", "mysqladmin", "ping", "-p${MYSQL_PASSWORD}" ]
+            retries: 3
+            timeout: 5s
+networks :
+    app-network :
+        driver : bridge
+volumes :
+    sail-mysql :
+        driver : local

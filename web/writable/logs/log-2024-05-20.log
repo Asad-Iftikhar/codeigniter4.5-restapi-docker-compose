@@ -1,0 +1,106 @@
+ERROR - 2024-05-20 08:55:23 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/api/web/system/Database/MySQLi/Connection.php(187): mysqli->real_connect()
+#2 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#3 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#5 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#6 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#11 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /var/www/html/api/web/system/Database/MySQLi/Connection.php(187): mysqli->real_connect()
+#1 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#5 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#9 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#4 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#5 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#7 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#8 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#9 {main}
+CRITICAL - 2024-05-20 08:55:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 457.
+ 1 SYSTEMPATH/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2024-05-20 08:55:27 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/api/web/system/Database/MySQLi/Connection.php(187): mysqli->real_connect()
+#2 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#3 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#5 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#6 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#11 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /var/www/html/api/web/system/Database/MySQLi/Connection.php(187): mysqli->real_connect()
+#1 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#5 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#9 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution in /var/www/html/api/web/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/api/web/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/api/web/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/api/web/app/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+#3 /var/www/html/api/web/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#4 /var/www/html/api/web/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#5 /var/www/html/api/web/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/api/web/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#7 /var/www/html/api/web/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#8 /var/www/html/api/web/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#9 {main}
+CRITICAL - 2024-05-20 08:55:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for mysql-codeigniter4 failed: Temporary failure in name resolution
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 457.
+ 1 SYSTEMPATH/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Home.php(14): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
