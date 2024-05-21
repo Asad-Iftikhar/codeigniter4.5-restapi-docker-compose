@@ -1,4 +1,4 @@
-# Code Igniter 4, Rest API, Docker Compose
+# CodeIgniter 4.5.1, Rest API, Docker Compose
 Initial configuration for a project using Code Igniter 4.5, MySQL, Nginx and Docker
 
 ## What the repository has
